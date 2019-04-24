@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  myProp:string = 'Go ahead, click that button!';
+  myArr = [
+    {title:'title 01'},
+    {title:'title 02'},
+    {title:'title 03'},
+    {title:'title 04'},
+  ];
   clickBtn() {
-    console.log('okay')
+    this.myProp = 'Changed';
   } 
 }

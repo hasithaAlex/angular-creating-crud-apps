@@ -1,7 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <button (click)="clickBtn()">Okay button</button>
+  {{myProp}}
 </div>
 
+<ul>
+  <li *ngFor="let arr of myArr">
+    {{arr.title}}
+  </li>
+</ul>
 
 <router-outlet></router-outlet>
