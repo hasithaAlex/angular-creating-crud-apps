@@ -111,10 +111,18 @@ export class AppComponent implements OnInit{
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
     .pipe(share())
   }
+  
+  
+  
+  
+  //SwicthMap==========================================
+  //cancel one observer and switch to other
 
 
 
-  //==========================================
+  
+  //DebounceTime==========================================
+  //
 
 }
 
