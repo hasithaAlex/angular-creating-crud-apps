@@ -13,13 +13,8 @@ export class AppComponent {
   items: Observable<any[]>;
   msg:string = '';
   
-  user: string;
-
   constructor(private heroservice:HeroService) {
     // this.items = any[];
   }
 
-  ngInit(){
-    this.heroservice.cast.subscribe(user=>this.user = user); 
-  }
 }
