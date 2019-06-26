@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { HeroService } from './hero.service';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +10,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  myProp:string = 'Go ahead, click that button!';
-  myArr = [
-    {title:'title 01'},
-    {title:'title 02'},
-    {title:'title 03'},
-    {title:'title 04'},
-  ];
-  clickBtn() {
-    this.myProp = 'Changed';
-  } 
+  items: Observable<any[]>;
+  msg:string = '';
+  
+  user: string;
+
+  constructor(private heroservice:HeroService) {
+    // this.items = any[];
+  }
+
+  ngInit(){
+    this.heroservice.cast.subscribe(user=>this.user = user); 
+  }
 }
